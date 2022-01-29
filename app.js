@@ -25,15 +25,15 @@ const game = {
     do {
       this.prevGuesses.push(this.getGuess())
       this.highLowRight()
-      //^ DO push the previous guesses into the array and run the highLowRight function to compare the current guess to the secretNum
+      //^ DO push the previous guesses into the array and run the highLowRight function to compare the current guess to the secretNum after each input of a different VALID num.
     } 
       while (this.prevGuesses[this.prevGuesses.length -1] !== this.secretNum)
       //^ DO above while current guess doesnt equal the secret num
-      // return this.sercretNum
+      // return this.sercretNum - NOT needed here
     },
     getGuess: function() {
       let originalGuess = 0
-      //^ assigning the original guess a value of 0 to start the functions
+      //^ assigning the original guess a value of 0 to start the functions/ the game to prompt the user to enter a VAILD num
       while (originalGuess < this.smallestNum || originalGuess > this.largestNum || isNaN (originalGuess)) {
         //^WHILE the guess is less than the smallest number possible, bigger than the biggest number possible, and is a string do below 
         originalGuess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.largestNum}`))
